@@ -1,3 +1,11 @@
+<?php
+require_once("./php/send-mail.php");
+
+if (isset($_POST["mensaje"])) {
+    sendEmail();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,28 +41,22 @@
         max-vw-100
       " aria-label="Navbar" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" data-easing="easeInOutQuad" href="#"><img src="img/LogoFull.png" class="logo"
-                    alt="Net Mining" /></a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsBtns" aria-controls="navbarsBtns" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" data-easing="easeInOutQuad" href="#"><img src="img/LogoFull.png" class="logo" alt="Net Mining" /></a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsBtns" aria-controls="navbarsBtns" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="navbar-collapse collapse" id="navbarsBtns">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end w-100">
                     <li class="nav-item">
-                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()"
-                            href="#rig-minero">rig
+                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()" href="#rig-minero">rig
                             minero</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()"
-                            href="#quienes-somos">quiénes somos</a>
+                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()" href="#quienes-somos">quiénes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()"
-                            href="#contacto">contacto</a>
+                        <a class="nav-link blue text-uppercase montserrat-light" onclick="closeNav()" href="#contacto">contacto</a>
                     </li>
                 </ul>
             </div>
@@ -77,8 +79,7 @@
         </section>
 
         <section class="row py-md-5">
-            <div class="card col-10 offset-1 col-md-4 offset-md-4 border-0 card-bg cardRig my-md-5 pb-3 pb-md-5"
-                data-aos="fade-up">
+            <div class="card col-10 offset-1 col-md-4 offset-md-4 border-0 card-bg cardRig my-md-5 pb-3 pb-md-5" data-aos="fade-up">
                 <img src="img/IconCripto.svg" class="iconCripto" alt="">
 
                 <div class="card-body p-3">
@@ -101,8 +102,7 @@
         </section>
         <section class="row my-5">
             <div class="col-10 offset-1 col-md-4 offset-md-2">
-                <h2 class="section-title blue text-center my-4 text-sm-start">Rigs de minado <br
-                        class="d-none d-md-block"> de Criptomonedas</h2>
+                <h2 class="section-title blue text-center my-4 text-sm-start">Rigs de minado <br class="d-none d-md-block"> de Criptomonedas</h2>
                 <p class="text justify-text">Montamos rigs de minería a medida, sólo tienes que decirnos cuál es tu
                     presupuesto o la potencia de minado que
                     necesitas. También podemos ofrecerte equipos ya montados y listos para minar.</p>
@@ -123,31 +123,26 @@
 
         <div class="row">
             <div class="col-10 offset-1 col-md-4 offset-md-4 text-center">
-                <a class="btn btn-primary btn-minery white my-5 blue-bg d-inline-block reserva-tu-rig"
-                    href="#contacto">Reservá tu rig de
+                <a class="btn btn-primary btn-minery white my-5 blue-bg d-inline-block reserva-tu-rig" href="#contacto">Reservá tu rig de
                     minado</a>
                 <hr class="w-50 mx-auto">
             </div>
         </div>
 
         <section class="row my-5 pt-md-5">
-            <ul class="nav nav-pills mb-4 d-md-flex flex-md-column col-md-3 ms-md-3 justify-content-center order-md-last"
-                id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-4 d-md-flex flex-md-column col-md-3 ms-md-3 justify-content-center order-md-last" id="pills-tab" role="tablist">
                 <li class="nav-item mx-3" role="presentation">
-                    <a class="bitcoins-tab active" id="pills-bitcoin-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-bitcoin" role="tab" aria-controls="pills-bitcoin" aria-selected="true">
+                    <a class="bitcoins-tab active" id="pills-bitcoin-tab" data-bs-toggle="pill" data-bs-target="#pills-bitcoin" role="tab" aria-controls="pills-bitcoin" aria-selected="true">
                         <img src="img/IconBitcoin.svg" class="tabIcons">
                     </a>
                 </li>
                 <li class="nav-item mx-3 my-md-5" role="presentation">
-                    <a class="bitcoins-tab" id="pills-chia-tab" data-bs-toggle="pill" data-bs-target="#pills-chia"
-                        role="tab" aria-controls="pills-chia" aria-selected="true">
+                    <a class="bitcoins-tab" id="pills-chia-tab" data-bs-toggle="pill" data-bs-target="#pills-chia" role="tab" aria-controls="pills-chia" aria-selected="true">
                         <img src="img/IconChia.svg" class="tabIcons">
                     </a>
                 </li>
                 <li class="nav-item mx-3" role="presentation">
-                    <a class="bitcoins-tab" id="pills-ether-tab" data-bs-toggle="pill" data-bs-target="#pills-ether"
-                        role="tab" aria-controls="pills-ether" aria-selected="true">
+                    <a class="bitcoins-tab" id="pills-ether-tab" data-bs-toggle="pill" data-bs-target="#pills-ether" role="tab" aria-controls="pills-ether" aria-selected="true">
                         <img src="img/iconEther.svg" class="tabIcons">
                     </a>
                 </li>
@@ -155,8 +150,7 @@
 
             <div class="col-10 offset-1 col-md-4 offset-md-4 card-bg charts">
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-bitcoin" role="tabpanel"
-                        aria-labelledby="pills-bitcoin-tab">
+                    <div class="tab-pane fade show active" id="pills-bitcoin" role="tabpanel" aria-labelledby="pills-bitcoin-tab">
                         <h3 class="montserrat-bold yellow text-center mb-4 text-uppercase">Bitcoin</h3>
                         <img src="img/progresoBitcoin.png" class="img-fluid">
                     </div>
@@ -173,20 +167,17 @@
 
             <ul class="d-none " id="pills-tab" role="tablist">
                 <li class="nav-item mx-3" role="presentation">
-                    <a class="bitcoins-tab active" id="pills-bitcoin-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-bitcoin" role="tab" aria-controls="pills-bitcoin" aria-selected="true">
+                    <a class="bitcoins-tab active" id="pills-bitcoin-tab" data-bs-toggle="pill" data-bs-target="#pills-bitcoin" role="tab" aria-controls="pills-bitcoin" aria-selected="true">
                         <img src="img/IconBitcoin.svg" class="tabIcons">
                     </a>
                 </li>
                 <li class="nav-item mx-3" role="presentation">
-                    <a class="bitcoins-tab" id="pills-chia-tab" data-bs-toggle="pill" data-bs-target="#pills-chia"
-                        role="tab" aria-controls="pills-chia" aria-selected="true">
+                    <a class="bitcoins-tab" id="pills-chia-tab" data-bs-toggle="pill" data-bs-target="#pills-chia" role="tab" aria-controls="pills-chia" aria-selected="true">
                         <img src="img/IconChia.svg" class="tabIcons">
                     </a>
                 </li>
                 <li class="nav-item mx-3" role="presentation">
-                    <a class="bitcoins-tab" id="pills-ether-tab" data-bs-toggle="pill" data-bs-target="#pills-ether"
-                        role="tab" aria-controls="pills-ether" aria-selected="true">
+                    <a class="bitcoins-tab" id="pills-ether-tab" data-bs-toggle="pill" data-bs-target="#pills-ether" role="tab" aria-controls="pills-ether" aria-selected="true">
                         <img src="img/iconEther.svg" class="tabIcons">
                     </a>
                 </li>
@@ -322,49 +313,43 @@
                 </p>
 
                 <?php
-                    if (isset($_GET["envio"]) && $_GET["envio"] == "ok") {
-                        echo '<div class="alert alert-success" role="alert" style="max-width: 70%; margin: 0 auto;"> Hemos enviado tu mensaje con éxito! </div>';
-                    }
+                if ($_Envio == "ok") {
+                    echo '<div class="alert alert-success" role="alert" style="max-width: 70%; margin: 0 auto;"> Hemos enviado tu mensaje con éxito! </div>';
+                }
                 ?>
 
                 <?php
-                    if (isset($_GET["recaptcha"]) && $_GET["recaptcha"] == "fail") {
-                        echo '<div class="alert alert-danger" role="alert" style="max-width: 70%; margin: 0 auto;"> Ha fallado la comprobación anti-spam, vuelva a intentar </div>';
-                    }
+                if ($_Recaptcha == "fail") {
+                    echo '<div class="alert alert-danger" role="alert" style="max-width: 70%; margin: 0 auto;"> Ha fallado la comprobación anti-spam, vuelva a intentar </div>';
+                }
                 ?>
 
-                <form class="text-center mt-5" action="php/send-mail.php" method="POST">
+                <form class="text-center mt-5" action="#contacto" method="POST">
                     <div class="form-group mb-3 row d-flex justify-content-center">
                         <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-lg-5">
-                            <input id="nombre" name="nombre" placeholder="Nombre y Apellido" type="text"
-                                required="required" class="form-control" />
+                            <input id="nombre" name="nombre" placeholder="Nombre y Apellido" type="text" required="required" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group mb-3 row d-flex justify-content-center">
                         <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-lg-5">
-                            <input id="email" name="email" placeholder="e-mail" type="text" required="required"
-                                class="form-control" />
+                            <input id="email" name="email" placeholder="e-mail" type="text" required="required" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group mb-3 row d-flex justify-content-center">
                         <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-lg-5">
-                            <input id="asunto" name="asunto" placeholder="Asunto" type="text" required="required"
-                                class="form-control" />
+                            <input id="asunto" name="asunto" placeholder="Asunto" type="text" required="required" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group mb-3 row d-flex justify-content-center">
                         <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-lg-5">
-                            <textarea id="mensaje" name="mensaje" placeholder="Mensaje (máximo 250 caracteres)"
-                                type="text" required="required" class="form-control"></textarea>
+                            <textarea id="mensaje" name="mensaje" placeholder="Mensaje (máximo 250 caracteres)" type="text" required="required" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <div class="g-recaptcha d-flex justify-content-center"
-                            data-sitekey="6LeFoVobAAAAAPJCm7eiidChrmmbXc_bkrHOVlV8"></div>
+                        <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LeFoVobAAAAAPJCm7eiidChrmmbXc_bkrHOVlV8"></div>
                     </div>
                     <div class="form-group mb-3" style="margin-top: 9vh">
-                        <button name="submit" type="submit" class="btn btn-primary btn-minery white blue-bg"
-                            style="margin: 0 auto">
+                        <button name="submit" type="submit" class="btn btn-primary btn-minery white blue-bg" style="margin: 0 auto">
                             Enviar
                         </button>
                     </div>
@@ -419,8 +404,7 @@
         <div class="d-none d-md-flex row dark-bg py-3">
             <div class="offset-1 col-5 d-flex flex-row justifycontent-center align-items-center">
                 <div class="col-2 d-flex justify-content-center">
-                    <a class="navbar-brand" href="#"><img src="img/LogoFull.png" class="footerLogo"
-                            alt="Net Mining" /></a>
+                    <a class="navbar-brand" href="#"><img src="img/LogoFull.png" class="footerLogo" alt="Net Mining" /></a>
                 </div>
                 <div>
                     <p class="white mb-0 rights">© Net Mining Arg 2021</p>
@@ -428,11 +412,8 @@
                 </div>
             </div>
             <div class="col-5 d-flex justify-content-end">
-                <a class="white social-links w-auto"
-                    href="https://www.facebook.com/NET-Mining-102557972077532/https://www.facebook.com/NET-Mining-102557972077532/"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="white social-links-instagram w-auto" href="https://www.instagram.com/netminingarg/"><i
-                        class="fab fa-instagram"></i></a>
+                <a class="white social-links w-auto" href="https://www.facebook.com/NET-Mining-102557972077532/https://www.facebook.com/NET-Mining-102557972077532/"><i class="fab fa-facebook-f"></i></a>
+                <a class="white social-links-instagram w-auto" href="https://www.instagram.com/netminingarg/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -440,10 +421,8 @@
             <a class="navbar-brand mt-3" href="#"><img src="img/LogoFull.png" class="footerLogo" alt="Net Mining" /></a>
 
             <div class="d-flex flex-row justify-content-center my-3">
-                <a class="white social-links w-auto" href="https://www.facebook.com/NET-Mining-102557972077532/"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="white social-links-instagram w-auto ms-4" href="https://www.instagram.com/netminingarg/"><i
-                        class="fab fa-instagram"></i></a>
+                <a class="white social-links w-auto" href="https://www.facebook.com/NET-Mining-102557972077532/"><i class="fab fa-facebook-f"></i></a>
+                <a class="white social-links-instagram w-auto ms-4" href="https://www.instagram.com/netminingarg/"><i class="fab fa-instagram"></i></a>
             </div>
 
             <p class="white mb-0 rights">© Net Mining Arg 2021</p>
@@ -461,7 +440,7 @@
 
     <!-- ACA VA SCRIPT DE ELLOS -->
     <script>
-        window.onload = function () {
+        window.onload = function() {
             var ldk = document.createElement("script");
             ldk.type = "text/javascript";
             ldk.async = true;
@@ -473,9 +452,11 @@
     </script>
 
     <script>
-        let closeNav = function () {
+        let closeNav = function() {
             document.getElementById('navbarsBtns').classList.remove('show');
         }
+
+        console.log(document)
     </script>
 </body>
 

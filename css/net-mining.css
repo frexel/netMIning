@@ -302,7 +302,7 @@ sub-titulo {
   min-height: 60vh;
   background-image: url(../img/intro-mobile.jpg);
   background-position: center;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   display: flex;
   flex-direction: column;
